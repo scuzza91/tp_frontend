@@ -1,0 +1,450 @@
+/* PFO1 — Estilos globales. Fuente: Plus Jakarta Sans (Google Fonts), legible y moderna para portafolio. */
+
+:root {
+  --color-bg: #f4f6fb;
+  --color-surface: #ffffff;
+  --color-muted: #e8ecf4;
+  --color-text: #121826;
+  --color-text-soft: #4a5568;
+  --color-accent: #3b5bdb;
+  --color-accent-hover: #2f49b8;
+  --color-border: #c5cee0;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --radius: 0.75rem;
+  --shadow: 0 0.25rem 1.25rem rgba(18, 24, 38, 0.08);
+  --shadow-hover: 0 0.5rem 2rem rgba(59, 91, 219, 0.18);
+  --transition: 0.22s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* —— Header —— */
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.25rem 4% 1rem;
+}
+
+.site-logo {
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  color: var(--color-accent);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: color var(--transition);
+}
+
+.site-logo:hover {
+  color: var(--color-accent-hover);
+}
+
+.site-tagline {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+}
+
+/* —— Nav: flex para alinear enlaces; wrap en pantallas angostas —— */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(244, 246, 251, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0.65rem 4%;
+  max-width: 72rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.site-nav__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.site-main {
+  min-height: 50vh;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section--muted {
+  background: var(--color-muted);
+}
+
+.section__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.section__inner--split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.section__inner--split > * {
+  flex: 1 1 18rem;
+}
+
+.section__inner--narrow {
+  max-width: 36rem;
+}
+
+.section__title {
+  font-size: clamp(1.55rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+}
+
+.section__subtitle {
+  margin: 0 0 1.75rem;
+  color: var(--color-text-soft);
+  max-width: 42rem;
+}
+
+.intro-lead {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.intro-photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.intro-photo__caption {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  padding: 0.5rem 0 0;
+}
+
+/* —— Tarjetas: CSS Grid; unidades relativas y hover con transición —— */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 1rem 1.15rem 1.25rem;
+}
+
+.card__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.card__text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+}
+
+/* —— Habilidades: tabla y aside —— */
+.skills-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.skills-layout > * {
+  flex: 1 1 16rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+}
+
+.data-table__caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.data-table thead th {
+  background: var(--color-muted);
+  font-weight: 600;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(59, 91, 219, 0.06);
+  transition: background var(--transition);
+}
+
+.hobbies {
+  background: var(--color-surface);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.hobbies__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.hobbies__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--color-text-soft);
+}
+
+.hobbies__list li {
+  margin-bottom: 0.35rem;
+}
+
+/* —— Formulario —— */
+.contact-form {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.contact-form__row {
+  margin-bottom: 1rem;
+}
+
+.contact-form__label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.contact-form__input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: #fff;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.contact-form__input:hover {
+  border-color: var(--color-accent);
+}
+
+.contact-form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.2);
+}
+
+.contact-form__actions {
+  margin-top: 1.25rem;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.35rem;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* —— Películas —— */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1.5rem;
+}
+
+.movie {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+
+.movie__poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.movie__title {
+  margin: 0.85rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.movie__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+}
+
+/* —— Footer —— */
+.site-footer {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  background: #1a1f2e;
+  color: #e2e6ef;
+}
+
+.site-footer__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 4%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-footer__copy {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.site-footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-footer__link {
+  color: #a8b8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.site-footer__link:hover {
+  color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
