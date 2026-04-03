@@ -2,7 +2,7 @@
 
 Trabajo práctico individual: página única de presentación tipo portafolio, maquetada solo con HTML5 semántico y CSS3, cumpliendo la consigna de la Práctica Formativa Obligatoria 1.
 
-**URL de GitHub Pages (completar tras publicar):** `https://<usuario>.github.io/<repo>/`
+**URL de GitHub Pages (completar tras publicar):** `https://scuzza91.github.io/tp_frontend/`
 
 ---
 
@@ -17,10 +17,10 @@ Trabajo práctico individual: página única de presentación tipo portafolio, m
 
 ### Repositorio y publicación
 
-- [ ] Repositorio en GitHub creado.
-- [ ] Proyecto subido al repositorio.
-- [ ] Proyecto publicado utilizando GitHub Pages.
-- [ ] En el `README.md` se indica la URL de GitHub Pages.
+- [x] Repositorio en GitHub creado.
+- [x] Proyecto subido al repositorio.
+- [x] Proyecto publicado utilizando GitHub Pages.
+- [x] En el `README.md` se indica la URL de GitHub Pages.
 
 ### Uso de Google Fonts
 
